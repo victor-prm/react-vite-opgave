@@ -1,0 +1,24 @@
+@use 'base'
+
+.navheader
+    &__nav
+        @include base.fxrow
+        gap: base.$unit-1x
+        justify-content: space-between
+        align-items: center
+        padding: base.$unit-2x
+        color: base.$color-primary
+    &__profile-pic__wrapper,&__cart-btn__wrapper, &__back-button-wrapper
+        @include base.fxrow
+        justify-content: center
+        align-items: center
+        width: base.$unit-5x
+        height: base.$unit-5x
+    &__profile-pic__wrapper
+        overflow: hidden
+        border-radius: base.$unit-8x
+        border: 1px solid base.$gray-800
+    &__cart-btn, &__back-button
+        color: base.$color-primary
+        i
+            font-size: base.$unit-3x

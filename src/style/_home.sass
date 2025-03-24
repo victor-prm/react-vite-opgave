@@ -1,0 +1,51 @@
+@use 'base'
+
+.home
+    padding: base.$unit-2x
+     @include base.fxcol
+    gap: base.$unit-2x
+
+.home-banner
+    @include base.fxcol
+    gap: base.$unit-1x
+
+    &__ad
+        display: grid
+        > *
+            grid-area: 1 / 1
+            max-width: 40rem
+            border-radius: base.$unit-2x
+            overflow: hidden
+
+    &__ad-bg
+        width: 100%
+        height: 100%
+        display: block
+
+    &__ad-text
+        > *
+            display: block
+    &__hgroup
+        @include base.fxrow
+        align-items: center
+        justify-content: space-between
+
+    &__search-btn
+        color: base.$gray-800
+
+    &__ad-text
+        @include base.fxcol
+        gap: base.$unit-1x
+        margin: base.$unit-2x
+        color: base.$gray-1000
+
+    &__ad-title
+        font-size: base.$unit-3x
+        font-weight: 600
+
+    &__ad-code
+        font-style: normal
+        background: base.$gray-000
+        color: base.$color-highlight
+        width: fit-content
+        padding: base.$unit-025x base.$unit-3x

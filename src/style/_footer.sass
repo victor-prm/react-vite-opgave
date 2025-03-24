@@ -1,0 +1,32 @@
+@use 'base'
+
+.navfooter
+    position: fixed
+    bottom: 0
+    left: 0
+    width: 100%
+    padding: base.$unit-2x
+
+    font-size: base.$unit-2x
+    color: base.$color-primary
+
+    max-width: base.$max-width-page
+    left: 50%
+    transform: translateX(-50%)
+
+    background-color: rgba(base.$gray-100,0.8)
+    backdrop-filter: blur(base.$unit-05x)
+    border-radius: base.$unit-4x base.$unit-4x 0 0
+    overflow: hidden
+
+    &__link-list
+        display: flex
+        > *
+            @include base.fxrow
+            flex: 1
+            height: 100%
+            align-items: center
+            justify-content: center
+            font-size: base.$unit-3x
+    &__link
+        color: base.$color-primary
