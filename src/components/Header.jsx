@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { getCurrentPath } from "./helpers";
+import { getCurrentPath } from "../helpers";
 
 
 function Header(props) {
