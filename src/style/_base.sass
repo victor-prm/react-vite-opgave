@@ -95,10 +95,10 @@ ul li
     flex-direction: row
     align-items: flex-start
 
-@mixin standard-grid($item-size)
+@mixin standard-grid($item-width)
     display: grid
-    grid-template-columns: repeat(auto-fit, minmax($item-size, 1fr))
-    gap: $unit-1x
+    grid-template-columns: repeat(auto-fit, minmax($item-width, 1fr))
+    gap: $unit-2x
 
 .clickable-card
     position: relative

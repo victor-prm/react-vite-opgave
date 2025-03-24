@@ -2,7 +2,7 @@
 
 .home
     padding: base.$unit-2x
-     @include base.fxcol
+    @include base.fxcol
     gap: base.$unit-2x
 
 .home-banner
@@ -49,3 +49,27 @@
         color: base.$color-highlight
         width: fit-content
         padding: base.$unit-025x base.$unit-3x
+
+.product-list
+    &__product-grid
+        @include base.standard-grid($item-width: 16rem)
+
+.product-card
+    display: grid
+    background: base.$gray-000
+    > *
+        grid-area: 1 / 1
+    &__product-img
+        width: 100%
+        height: 100%
+        object-fit: cover
+    button
+        color: base.$color-primary
+        font-size: base.$unit-3x
+        margin: base.$unit-1x
+    &__product-like
+        place-self: start
+        justify-self: right
+    &__product-add
+        place-self: end
+        justify-self: right
