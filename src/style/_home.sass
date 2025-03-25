@@ -1,6 +1,4 @@
 @use 'base'
-@use "sass:color"
-@use "sass:math"
 
 .home
     padding: base.$unit-2x
@@ -16,7 +14,7 @@
         max-width: 40rem
         border-radius: base.$unit-2x
         overflow: hidden
-        border: 2px solid color.mix(base.$color-primary-100,base.$gray-050)
+        border: 2px solid base.mix(base.$color-primary-100,base.$gray-050)
 
         > *
             grid-area: 1 / 1
@@ -67,7 +65,7 @@
     border-radius: base.$unit-2x
     overflow: hidden
     opacity: 0.8
-    border: 2px solid color.mix(base.$color-primary-100,base.$gray-050)
+    border: 2px solid base.mix(base.$color-primary-100,base.$gray-050)
     aspect-ratio: 1 / 1
 
     > *

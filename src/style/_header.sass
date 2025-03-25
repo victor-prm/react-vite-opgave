@@ -1,6 +1,4 @@
 @use 'base'
-@use "sass:color"
-@use "sass:math"
 
 .nav-header
     &__nav
@@ -19,7 +17,7 @@
     &__profile-pic__wrapper
         overflow: hidden
         border-radius: base.$unit-8x
-        border: 2px solid color.mix(base.$color-primary-100,base.$gray-050)
+        border: 2px solid base.mix(base.$color-primary-100,base.$gray-050)
     &__cart-btn, &__back-button
         color: base.$color-primary
         i
