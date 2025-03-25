@@ -16,11 +16,9 @@ function ProductList(props) {
                     "tablets",
                     "mens-watches",
                     "mobile-accessories",
-                    "kitchen-accessories",
-                    "sports-accessories",
                     "sunglasses",
                 ];
-                
+
                 // Fetch all categories in parallel
                 const requests = categories.map((cat) =>
                     fetch(`https://dummyjson.com/products/category/${cat}`).then((res) => res.json())
@@ -51,8 +49,8 @@ function ProductList(props) {
         <>
             <section className={cname}>
                 <div className={`${cname}__product-grid`}>
-                {products.map((product) => (
-                        <ProductCard key={product.id} product={product} cname="product-card"/>
+                    {products.map((product) => (
+                        <ProductCard key={product.id} product={product} cname="product-card" />
                     ))}
                 </div>
             </section>
@@ -67,11 +65,19 @@ function ProductCard(props) {
     const cname = props.cname;
     const product = props.product;
 
+
+    function myFunc(){
+        console.log("hej")
+    }
+
+
     return (
         <>
             <article className={cname}>
                 <img className={`${cname}__product-img`} src={product.thumbnail} alt="" />
-                <button className={`${cname}__product-like`}><i className="far fa-heart"></i></button>
+                <h3 className={`${cname}__product-name`}><a className={`${cname}__product-link`} href="#">{product.title}</a></h3>
+                <p className={`${cname}__product-price`}>€{product.price}</p>
+                <button className={`${cname}__product-like`}><i className="far fa-heart" onClick={myFunc}></i></button>
                 <button className={`${cname}__product-add`}><i className="fas fa-cart-plus"></i></button>
             </article>
         </>

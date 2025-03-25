@@ -1,4 +1,6 @@
 @use 'base'
+@use "sass:color"
+@use "sass:math"
 
 .home
     padding: base.$unit-2x
@@ -11,11 +13,13 @@
 
     &__ad
         display: grid
+        max-width: 40rem
+        border-radius: base.$unit-2x
+        overflow: hidden
+        border: 2px solid color.mix(base.$color-primary-100,base.$gray-050)
+
         > *
             grid-area: 1 / 1
-            max-width: 40rem
-            border-radius: base.$unit-2x
-            overflow: hidden
 
     &__ad-bg
         width: 100%
@@ -55,22 +59,42 @@
         @include base.standard-grid($item-width: 16rem)
 
 .product-card
+    position: relative
+    @include base.clickable-card
+
     display: grid
     background: base.$gray-000
+    border-radius: base.$unit-2x
+    overflow: hidden
+    opacity: 0.8
+    border: 2px solid color.mix(base.$color-primary-100,base.$gray-050)
+
     > *
         grid-area: 1 / 1
+        margin: base.$unit-1x
     &__product-img
         width: 100%
         height: 100%
         object-fit: cover
+
+    &__product-link
+        text-decoration: none
+        color: base.$color-primary-400
+        background-color: rgba(base.$gray-100,0.5)
+    &__product-price
+        text-decoration: none
+        color: base.$color-primary-400
+        background-color: rgba(base.$gray-100,0.5)
+        place-self: end
+        justify-self: left
     button
-        color: base.$color-primary
+        color: base.$gray-800
         font-size: base.$unit-3x
-        margin: base.$unit-1x
+        z-index: 20
+
     &__product-like
         place-self: start
         justify-self: right
     &__product-add
         place-self: end
         justify-self: right
-x

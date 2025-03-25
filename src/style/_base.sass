@@ -1,9 +1,10 @@
-@use 'sass:math'
-@use 'sass:color'
+@use "sass:color"
+@use "sass:math"
 
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css);
 
 $gray-000: #000000
+$gray-050: #0d0d0d
 $gray-100: #1a1a1a
 $gray-200: #333333
 $gray-300: #4d4d4d
@@ -18,7 +19,7 @@ $gray-900: #e5e5e5
 $gray-950: #f2f2f2
 $gray-1000: #ffffff
 
-$color-primary: #00FFE3
+$color-primary: #11b7e1
 $color-primary-100: color.scale($color-primary,$lightness: -80%)
 $color-primary-200: color.scale($color-primary,$lightness: -60%)
 $color-primary-300: color.scale($color-primary,$lightness: -40%)
@@ -52,8 +53,8 @@ $text-headline: 1.5rem/2rem Roboto_Reg, Arial, Helvetica, sans-serif
 $grid-item-size: 8rem
 
 @font-face
- font-family: Inter
- src: url(../fonts/Inter/Inter-VariableFont.ttf) format('truetype') 
+    font-family: Inter
+    src: url(../fonts/Inter/Inter-VariableFont.ttf) format('truetype')
 
 *,
 *::before,
@@ -100,13 +101,13 @@ ul li
     grid-template-columns: repeat(auto-fit, minmax($item-width, 1fr))
     gap: $unit-2x
 
-.clickable-card
+@mixin clickable-card
     position: relative
 
     a::before
         content: ''
         position: absolute
-        z-index: 100
+        z-index: 10
         inset: 0
 
     a:focus
@@ -114,6 +115,6 @@ ul li
         outline: none
 
     &:focus-within
-        box-shadow: 0 0 0 1px blue
+        box-shadow: 0 0 0 1px $color-primary    
 
 @media only screen and (max-width: $tablet-breakpoint)
