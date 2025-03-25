@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { getCurrentPath } from "../helpers";
+import { Link } from "react-router";
 
 
 function Header(props) {
@@ -33,9 +34,11 @@ function createLeftButton(_cname) {
     } else {
         return (
             <div className={`${_cname}__back-button-wrapper`}>
-                <button className={`${_cname}__back-button`}>
-                    <i className="fas fa-chevron-left"></i>
-                </button>
+                <Link to="/">
+                    <button className={`${_cname}__back-button`}>
+                        <i className="fas fa-chevron-left"></i>
+                    </button>
+                </Link>
             </div>
         );
     }

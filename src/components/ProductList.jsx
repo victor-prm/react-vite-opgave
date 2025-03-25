@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getCurrentPath } from "../helpers";
+import { Link } from "react-router";
 
 function ProductList(props) {
     const [count, setCount] = useState(0)
@@ -66,19 +67,27 @@ function ProductCard(props) {
     const product = props.product;
 
 
-    function myFunc(){
-        console.log("hej")
+    function addToBasket() {
+        console.log("Dummy function for addToBasket")
+    }
+    function addToFavorites() {
+        console.log("Dummy function for addToFavorites")
     }
 
 
     return (
         <>
             <article className={cname}>
-                <img className={`${cname}__product-img`} src={product.thumbnail} alt="" />
-                <h3 className={`${cname}__product-name`}><a className={`${cname}__product-link`} href="#">{product.title}</a></h3>
+                <img className={`${cname}__product-img`} src={product.thumbnail} alt="" loading="lazy"/>
+                <h3 className={`${cname}__product-name`}> <Link  className={`${cname}__product-link`}
+                    to={{
+                        pathname: "/detail",
+                        search: `?query=${product.id}`,
+                    }}>{product.title}</Link>
+                   </h3>
                 <p className={`${cname}__product-price`}>€{product.price}</p>
-                <button className={`${cname}__product-like`}><i className="far fa-heart" onClick={myFunc}></i></button>
-                <button className={`${cname}__product-add`}><i className="fas fa-cart-plus"></i></button>
+                <button className={`${cname}__product-like`}><i className="far fa-heart" onClick={addToFavorites}></i></button>
+                <button className={`${cname}__product-add`}><i className="fas fa-cart-plus" onClick={addToBasket}></i></button>
             </article>
         </>
     )

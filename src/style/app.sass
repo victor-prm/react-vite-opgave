@@ -2,14 +2,13 @@
 @use 'header'
 @use 'home'
 @use 'footer'
-@use "sass:color"
-@use "sass:math"
+
 
 
 body
     min-height: 100dvh
     background: rgb(0,0,0)
-    background: color.mix(base.$color-primary-100,base.$gray-050)
+    background: base.mix(base.$color-primary-100,base.$gray-050)
     color: base.$gray-800
 
 #app
